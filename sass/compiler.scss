@@ -1,0 +1,446 @@
+@import 'global';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    @include flex (row, space-between, center, nowrap);
+
+    .hamb {
+        display: none;
+    }
+
+    .logo {
+        width: 100%;
+        @include flex (row, flex-start, center, nowrap);
+        padding: 0px;
+        margin-left: 10px;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+    }
+
+    .butons {
+        padding: 0px;
+        @include flex (row, flex-end, center, nowrap);
+        margin: 0px;
+    }
+
+    .net {
+        background-color: $color-first;
+        margin: 10px;
+        border-radius: 3px;
+        color: $color-second;
+    }
+}
+
+.container {
+    width: 100%;
+    margin-top: 165px;
+    padding: 20px;
+    @include flex (row, center, flex-start, nowrap);
+
+    .info {
+        @include flex (column, center, flex-start, nowrap);
+        width: 100%;
+        padding: 20px;
+
+        h2 {
+            color: $color-ther;
+        }
+    }
+
+    .img-info {
+        @include flex (column, center, center, nowrap);
+        width: 100%;
+
+        img {
+            width: 70%;
+        }
+    }
+}
+
+.grid {
+    @include flex(row, flex-start, center, nowrap);
+    width: 100%;
+    margin-top: 20px;
+
+    .tecno {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(220px, auto);
+        gap: 15px;
+        padding: 20px;
+
+        .tecno-web {
+            width: 100%;
+            padding: 30px;
+            text-align: center;
+            border-radius: 3px;
+        }
+    }
+
+    .text-info {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+
+        h3 {
+            color: $color-ther;
+
+            .fa-rocket {
+                font-size: 3.0rem;
+            }
+        }
+
+        img {
+            width: 45%;
+        }
+    }
+}
+
+.proyectos {
+    .pro-1 {
+        img {
+            width: 100%;
+        }
+
+        button {
+            @extend .butt-card;
+        }
+    }
+}
+
+.contacto {
+    background-image:
+        linear-gradient(45deg, rgba(22, 152, 156, 0.562), rgba(62, 189, 228, 0.336)),
+        url(../img/snow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    form {
+        width: 100%;
+        padding: 20px;
+        @include flex(column, flex-start, flex-start, nowrap);
+    }
+}
+
+.info-net {
+    width: 100%;
+    @include flex(column, center, flex-end, nowrap);
+
+    ul {
+        color: $color-second;
+
+        i {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
+.net-p {
+    width: 100%;
+    @include flex(column, center, flex-end, nowrap);
+    padding: 20px;
+
+    .end {
+        p {
+            font-size: 1.2rem;
+            color: $color-second;
+        }
+
+        ul {
+            color: $color-second;
+        }
+    }
+
+}
+
+.logo-red {
+    width: 100%;
+    padding-top: 90px;
+    @include flex(row, center, flex-end, nowrap);
+
+    i {
+        font-size: 2.8rem;
+        color: $color-second;
+    }
+}
+
+.derechos {
+    p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+}
+
+//media queries
+
+@media (max-width: 768px) {
+
+    header,
+    nav {
+        width: 100%;
+        padding: 5px;
+
+        .hamb {
+            width: 40px;
+            height: 40px;
+            @include flex (column, center, center, nowrap);
+            padding: 5px;
+
+            span {
+                background: $color-ther;
+                width: 100%;
+                padding: 2px;
+                position: relative;
+                margin: 3px;
+            }
+        }
+
+        .logo {
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .butons {
+           /*  @include flex(column, flex-start, flex-end, nowrap); */
+            background-color: $color-first;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            min-height: 100vh;
+            padding: 10px;
+            transform: translateX(-1500px);
+            display: none;
+
+
+            a {
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid #808080;
+                color: #fff;
+            }
+
+            .net {
+                background-color: transparent;
+                margin: 0;
+                color: white;
+            }
+        }
+
+        .hamb-x {
+                width: 50px;
+                height: 40px;
+                @include flex (column, center, center, nowrap);
+                padding: 10px;
+
+                span {
+                    background: white;
+                    width: 100%;
+                    margin: 5px;
+                    padding: 1.5px;
+                }
+
+                .eje-x:nth-of-type(1) {
+                    transform: rotate(-45deg) translate(-5px, 5px);
+                }
+
+                .eje-x:nth-of-type(2) {
+                    transform: rotate(45deg) translate(-5px, -5px);
+                }
+            }
+
+        .remove {
+            @include flex(column, flex-start, flex-start, nowrap);
+            background-color: $back-header;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            min-height: 100vh;
+            padding: 20px;
+            animation: remove-line 2s;
+            transform: translateX(-1500px);
+
+            @keyframes remove-line {
+                to {
+                    transform: translateX(-1500px);
+                }
+
+                from {
+                    transform: translateX(-0px);
+                }
+            }
+        }
+
+        .oculto {
+            display: none;
+        }
+        
+
+        .active {
+            @include flex(column, flex-start, flex-start, nowrap);
+            background-color: $back-header;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            min-height: 100vh;
+            padding: 20px;
+            animation: line 2s;
+            transform: translateX(-0px);
+
+            @keyframes line {
+                to {
+                    transform: translateX(-0px);
+                }
+
+                from {
+                    transform: translateX(-1500px);
+                }
+            }
+
+        }
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 2.0rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        width: 100%;
+        margin-top: 70px;
+        @include flex(column, flex-start, flex-start, nowrap);
+
+        .info {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .img-info {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .grid {
+        @include flex(column-reverse, flex-start, flex-start, nowrap);
+        margin-top: 0px;
+        padding: 10px;
+
+        .tecno {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 5px;
+            padding: 0px;
+            margin: auto;
+
+            .tecno-web {
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+                border-radius: 3px;
+            }
+        }
+
+        .text-info {
+            width: 100%;
+            padding: 20px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .proyectos {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .contacto {
+        width: 100%;
+
+        .contacto-form {
+            width: 100%;
+            padding: 0;
+            @include flex(column, flex-start, flex-start, nowrap);
+
+            .form-control {
+                width: 100%;
+                border-right: 0;
+
+                form {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+
+            .mapa {
+                width: 100%;
+
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+
+        section {
+            width: 100%;
+            @include flex(column-reverse, flex-start, flex-start, nowrap);
+
+            .info-net {
+                @include flex(column, flex-start, flex-start, nowrap);
+                padding: 20px;
+            }
+
+            .logo-red {
+                width: 100%;
+                padding-top: 0px;
+                @include flex(row, center, flex-start, nowrap);
+            }
+        }
+    }
+
+    .derechos {
+        width: 100%;
+        text-align: center;
+    }
+}

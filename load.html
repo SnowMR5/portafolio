@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hamb">
+        <span></span>
+    </div>
+</body>
+<style>
+    .hamb {
+        width: 15px;
+        height: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    span {
+        background: black;
+        width: 100%;
+        padding: 2px;
+        margin: 2px;
+        position: relative;
+    }
+
+    span::before {
+        content: '';
+        padding: 2px;
+        width: 100%;
+        background: black;
+        position: absolute;
+        top: -6px;
+        left: 0;
+    }
+
+    span::after {
+        content: '';
+        padding: 1.5px;
+        width: 100%;
+        background: black;
+        position: absolute;
+        top: 6px;
+        right: 0;
+    }
+</style>
+
+</html>

@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+$back-header: #033d53fd;
+$back-container: #666666ca;
+$card-color: #cfcfcf;
+
+
+$color-first: crimson;
+$color-second: #fff;
+$color-ther: #000;
+
+$font: 62.5% 'Noto Sans JP',
+sans-serif;
+
+
+body {
+    font-size: $font;
+}
+
+header {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0px 5px 15px rgba(54, 54, 54, 0.885);
+    padding: 10px;
+
+    h1 {
+        color: $color-ther;
+    }
+}
+
+.link {
+    padding: 10px;
+    border: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    @extend .link;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+a:hover {
+    transform: scale(1.1);
+    animation: scale-y 1s;
+}
+
+@keyframes scale-y {
+    to {
+        transform: scale(1.1);
+    }
+
+    from {
+        transform: scale(1);
+    }
+}
+
+.btn-butt {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 3px;
+    color: $color-second;
+    background-color: $color-first;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+
+    li {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 15px;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-size: 3.0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $color-second;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $color-ther;
+    margin-bottom: 20px;
+}
+
+@mixin flex ($direction, $content, $cruzado, $wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $cruzado;
+    flex-wrap: $wrap;
+}
+
+article {
+    width: 100%;
+}
+
+i {
+    font-size: 100px;
+}
+
+.tecno-web:hover {
+    transform: scale(1.1);
+    /* transform: perspective(300px) rotateY(-45deg); */
+    box-shadow: 5px 5px 5px rgba(36, 36, 36, 0.45);
+    animation: scale-div 1s;
+    z-index: 1;
+}
+
+@keyframes scale-div {
+    to {
+        transform: scale(1.1);
+    }
+
+    from {
+        transform: scale(1);
+    }
+}
+
+.tecno-web:nth-of-type(1) {
+    background-color: #8f8f05d0;
+}
+
+.tecno-web:nth-of-type(2) {
+    background-color: #acacacd0;
+}
+
+.tecno-web:nth-of-type(3) {
+    background-color: #2a7c0ad0;
+}
+
+.tecno-web:nth-of-type(4) {
+    background-color: #1a5881d0;
+}
+
+.tecno-web:nth-of-type(5) {
+    background-color: #cc48abd0;
+}
+
+.tecno-web:nth-of-type(6) {
+    background-color: #b45e0ed0;
+}
+
+.leer {
+    width: 100%;
+    padding: 0px;
+    margin: 0;
+
+    .mas {
+        font-size: 1.2rem;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        display: none;
+    }
+
+    .show {
+        display: block;
+        animation: expand 1s ease;
+    }
+
+    @-webkit-keyframes expand {
+        to {
+            transform: translateY(-0%);
+        }
+
+        from {
+            transform: translateY(100%);
+        }
+    }
+
+    @-moz-keyframes expand {
+        to {
+            transform: translateY(-0%);
+        }
+
+        from {
+            transform: translateY(100%);
+        }
+    }
+
+
+    .progress {
+        width: 100%;
+        border: 1px solid $color-ther;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        .carga {
+            width: 85%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+
+        .carga-2 {
+            width: 100%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+
+        .carga-3 {
+            width: 50%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+
+        .carga-4 {
+            width: 100%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+
+        .carga-5 {
+            width: 90%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+
+        .carga-6 {
+            width: 100%;
+            color: white;
+            font-size: .8rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            text-align: center;
+            background-color: $color-ther;
+            padding: 3px;
+            white-space: nowrap;
+            -webkit-animation: pbar 5s infinite;
+            -moz-animation: pbar 5s infinite;
+        }
+    }
+
+    @-webkit-keyframes pbar {
+        0% {
+            width: 0;
+            color: transparent;
+        }
+    }
+
+    @-moz-keyframes pbar {
+        0% {
+            width: 0;
+            color: transparent;
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border: 0;
+        color: $color-second;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.butt-card {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    color: $color-second;
+    background-color: $color-first;
+    font-size: 1rem;
+    font-family:'Noto Sans JP', sans-serif;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.proyectos {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3px;
+    padding: 20px;
+
+    .pro-1 {
+        grid-column: span 1;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+        gap: 3px;
+
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            padding: 10px;
+            background-color: $card-color;
+            color: $color-ther;
+            margin-bottom: 0;
+        }
+
+        .butt-tecno {
+            width: 100%;
+            @include flex(row, space-around, center, nowrap);
+            padding: 10px;
+            color: $color-ther;
+            
+            .span-tecno:nth-of-type(1) {
+                background-color: #f55212;
+                padding: 10px;
+                border-radius: 100%;
+            }
+
+            .span-tecno:nth-of-type(2) {
+                background-color: #0e579b;
+                padding: 15px;
+                border-radius: 100%;
+            }
+
+            .span-tecno:nth-of-type(3) {
+                background-color: #f7c00e;
+                padding: 20px;
+                border-radius: 100%;
+            }
+
+            span {
+                transform: translateX(-1500px);
+                animation: left-tec 5s infinite;
+            }
+
+            @keyframes left-tec {
+                0% {
+                    transform: translateX(-1500px);
+                }
+                25% {
+                    transform: translateX(0);
+                }
+                50% {
+                    transform: translateX(0);
+                }
+                75% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(1500px);
+                }
+            }
+        }
+    }
+}
+
+.contacto {
+    width: 100%;
+
+    .contacto-form {
+        width: 100%;
+        padding: 20px;
+        @include flex(row, flex-start, center, nowrap);
+
+        .form-control {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            font-family:'Noto Sans JP', sans-serif;
+            /* backdrop-filter: blur(3px); */
+            background-color: rgba(0,0,0,0.300);
+            border-right: 20px solid #555555;
+
+            label {
+                font-size: 1.5rem;
+                font-family: inherit;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 0;
+                border-radius: 3px;
+            }
+
+            input:hover {
+                box-shadow: 0px 5px 5px rgba(0,0,0,0.45);
+                border: 3px solid $color-first;
+            }
+
+            input[type=submit] {
+                margin-top: 10px;
+                @extend .btn-butt;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 0;
+                border-radius: 3px;
+                resize: none;
+            }
+
+            textarea:hover {
+                box-shadow: 0px 5px 5px rgba(0,0,0,0.45);
+                border: 3px solid $color-first;
+            }
+        }
+
+        .mapa {
+            width: 100%;
+            @include flex(column, center, center, nowrap);
+
+            iframe {
+                filter: grayscale(100%);
+            }
+            iframe:hover {
+                filter: grayscale(0%);
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: #5e5e5efb;
+
+    section {
+        width: 100%;
+        @include flex(row, flex-end, center, nowrap);
+    }
+}
+
+.derechos {
+    width: 100%;
+    background-color: #dbdbdb;
+    @include flex(column, center, center, nowrap);
+}
+
+.prt {
+    width:100%;
+    padding: 30px;
+    @include flex(row, flex-start, flex-start, nowrap);
+    
+    h3 {
+        color: $color-ther;
+    }
+}
